@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: sample-application
+
+eureka:
+  instance:
+    instanceId: ${spring.application.name}:${random.string}
+    
+#sample-client:
+#  ribbon:
+#    listOfServers: http://localhost:8080
+#    connectionTimeout: 5000
+#    readTimeout: 5000
+#    isSecure: false
