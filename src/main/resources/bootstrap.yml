@@ -1,14 +1,14 @@
 spring:
   application:
     name: sample-application
-
-eureka:
-  instance:
-    instanceId: ${spring.application.name}:${random.string}
+  cloud:
+    config:
+      uri: http://ec2-18-221-58-46.us-east-2.compute.amazonaws.com:8080
     
-#sample-client:
-#  ribbon:
-#    listOfServers: http://localhost:8080
-#    connectionTimeout: 5000
-#    readTimeout: 5000
-#    isSecure: false
+---
+
+spring:
+  profiles: dev
+  cloud:
+    config:
+      uri: http://localhost:8888
